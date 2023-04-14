@@ -62,8 +62,8 @@ jobs:
     - name: "Build: pickhaxe build && pickhaxe make"
       run: |
         cd ./${{matrix.sample}}
-        haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}} --verbose
-        haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}} --verbose
+        haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}}
+        haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}}
     - name: "Cleanup: Upload Artifacts"
       uses: actions/upload-artifact@v3
       with:
