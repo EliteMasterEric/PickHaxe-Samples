@@ -78,4 +78,5 @@ jobs:
         ICON: 'github'
         STATUS: ${{ success() && 'passing' || 'failing' }}
         COLOR: ${{ success() && 'green' || 'red' }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
