@@ -1,0 +1,47 @@
+name: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}} (${{inputs.sample}} ${{inputs.mcloader}} ${{inputs.mcversion}})
+
+inputs:
+  os:
+    description: 'Docker image used to run this build'
+    required: true
+    default: ubuntu-latest
+  haxe:
+    description: 'Haxe version used to run this build'
+    required: true
+    default: 4.3.0
+  sample:
+    description: 'The name of the sample to build'
+    required: true
+  mcloader:
+    description: 'The Minecraft mod loader to target'
+    required: true
+  mcversion:
+    description: 'The Minecraft version to target'
+    required: true
+  pickhaxe:
+    description: 'The PickHaxe version to install'
+    required: true
+    default: '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
+
+env:
+  pickhaxe: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}}
+steps:
+  - name: "Setup: Java 17"
+    uses: actions/setup-java@v3
+    with:
+      distribution: 'oracle'
+      java-version: '17'
+  - name: "Setup: Haxe ${{ matrix.haxe }} and PickHaxe (${{env.pickhaxe}})"
+    uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
+    with:
+      haxe-version: ${{ matrix.haxe }}
+      haxe-libs: |
+        haxelib@git:https://github.com/HaxeFoundation/haxelib#development
+        hxjava
+        pickhaxe${{ matrix.pickhaxe }}
+  - name: "Build: pickhaxe build && pickhaxe make"
+    # Using Mojang mappings because they're more up-to-date (they have fewer docs but we don't need them)
+    run: |
+      cd ./${{matrix.sample}}
+      haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}} --mappings mojang
+      haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}} --mappings mojang

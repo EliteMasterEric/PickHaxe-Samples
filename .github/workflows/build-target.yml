@@ -1,0 +1,77 @@
+name: Build Target
+on:
+  workflow_dispatch: # We can run this workflow manually
+    inputs:
+      os:
+        description: 'Docker image'
+        required: true
+        default: ubuntu-latest
+        type: string
+      haxe:
+        description: 'Haxe version'
+        required: true
+        default: 4.3.0
+        type: string
+      sample:
+        description: 'Sample to build'
+        required: true
+        default: 'madeinhaxe'
+        type: choice
+        options:
+          - madeinhaxe
+          - obsidianarmor
+      mcloader:
+        description: 'Minecraft modloader'
+        required: true
+        default: 'fabric'
+        type: choice
+        options:
+          - fabric
+          - forge
+      mcversion:
+        description: 'Minecraft version'
+        required: true
+        default: 'latest'
+        type: string
+      pickhaxe:
+        description: 'PickHaxe version'
+        required: true
+        default: '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
+        type: choice
+        options:
+          - ''
+          - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
+
+defaults:
+  run:
+    shell: bash
+
+# The jobs to perform; these run in parallel.
+jobs:
+  # Perform a PickHaxe build and make.
+  # The task should fail if Gradle fails.
+  build:
+    name: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}} (${{inputs.sample}} ${{inputs.mcloader}} ${{inputs.mcversion}})
+    runs-on: ${{ inputs.os }}
+    strategy:
+      fail-fast: false
+    env:
+      pickhaxe: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}}
+    steps:
+    - name: "Setup: Git Checkout"
+      uses: actions/checkout@v3
+    - name: "Build: pickhaxe build && pickhaxe make"
+      uses: ./.github/actions/build-pickhaxe-sample
+      with:
+        os: ${{matrix.os}}
+        haxe: ${{matrix.haxe}}
+        sample: ${{matrix.sample}}
+        mcloader: ${{matrix.mcloader}}
+        mcversion: ${{matrix.mcversion}}
+        pickhaxe: ${{matrix.pickhaxe}}
+    - name: "Cleanup: Upload Artifacts"
+      if: env.ACT != 'true' # https://github.com/nektos/act#skipping-steps
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{inputs.sample}}-${{inputs.mcloader}}-${{inputs.mcversion}}_${{(inputs.pickhaxe == '') && 'release' || 'develop'}}
+        path: ./${{inputs.sample}}/build/${{inputs.mcloader}}/${{inputs.mcversion}}/*.jar
