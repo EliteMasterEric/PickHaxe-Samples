@@ -35,6 +35,7 @@ jobs:
         - 4.3.0
         sample:
         - madeinhaxe
+        - obsidianarmor
         mcloader:
         - fabric
         - forge
@@ -49,6 +50,9 @@ jobs:
         pickhaxe:
         # - '' # Current HaxeLib version (NOTE: pickhaxe doesn't work on haxelib right now)
         - '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
+        exclude:
+        - mcversion: latest-snapshot # Forge does not target snapshots, Fabric does.
+          mcloader: forge
     env:
       pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
     steps:
