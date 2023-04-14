@@ -69,3 +69,13 @@ jobs:
       with:
         name: ${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
         path: ./${{matrix.sample}}/build/${{matrix.mcloader}}/${{matrix.mcversion}}/*.jar
+    - name: "Cleanup: Update Badge"
+      if: always()
+      uses: RubbaBoy/BYOB@v1.3.0
+      with:
+        NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matric.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
+        LABEL: ${{matrix.mcloader}} v${{matric.mcversion}}
+        ICON: 'github'
+        STATUS: ${{ success() && 'passing' || 'failing' }}
+        COLOR: ${{ success() && 'green' || 'red' }}
+      
