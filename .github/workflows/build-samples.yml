@@ -37,25 +37,35 @@ jobs:
         - madeinhaxe
         mcloader:
         - fabric
+        - forge
         mcversion:
         - 1.19.3
         pickhaxe:
         - ''
         - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
-        - '@git:https://github.com/EliteMasterEric/PickHaxe#efef477'
     env:
       pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
     steps:
-    - name: Git Checkout
+    - name: "Setup: Git Checkout"
       uses: actions/checkout@v3
-    - name: "Install: Haxe ${{ matrix.haxe }} and PickHaxe (${{env.pickhaxe}})"
+    - name: "Setup: Java 17"
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'oracle'
+        java-version: '17'
+    - name: "Setup: Haxe ${{ matrix.haxe }} and PickHaxe (${{env.pickhaxe}})"
       uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
       with:
         haxe-version: ${{ matrix.haxe }}
         haxe-libs: |
-          PickHaxe${{ matrix.pickhaxe }}
-    - name: pickhaxe build && pickhaxe make
-      # cd ./${{matrix.sample}}
+          pickhaxe${{ matrix.pickhaxe }}
+    - name: "Build: pickhaxe build && pickhaxe make"
       run: |
-        haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}}
-        haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}}
+        cd ./${{matrix.sample}}
+        haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}} --verbose
+        haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}} --verbose
+    - name: "Cleanup: Upload Artifacts"
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
+        path: ./${{matrix.sample}}/build/${{matrix.mcloader}}/${{matrix.mcversion}}/*.jar

@@ -15,6 +15,9 @@ See each project's README for more detailed information, along with a compatibil
     - Navigate to Actions
     - Select the workflow you want to run.
     - Click "Run workflow" at the right side
+- `git add .; git commit -m "Workflow"; git push`
+- https://github.com/nektos/act#manual-download
+    - `./bin/act -j build`
 
 ## Licensing
 
