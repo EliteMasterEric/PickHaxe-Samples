@@ -24,10 +24,11 @@ inputs:
     required: true
     default: '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
 
+env:
+  pickhaxe: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}}
+
 runs:
   using: "composite"
-  env:
-    pickhaxe: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}}
   steps:
     - name: "Setup: Java 17"
       uses: actions/setup-java@v3
