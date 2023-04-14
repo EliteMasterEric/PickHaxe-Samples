@@ -33,8 +33,8 @@ jobs:
         - 4.3.0
         pickhaxe:
         - ''
-        - @git:https://github.com/EliteMasterEric/PickHaxe#master
-        - @git:https://github.com/EliteMasterEric/PickHaxe#develop
+        - '@git:https://github.com/EliteMasterEric/PickHaxe#master'
+        - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
         sample:
         - madeinhaxe
         mcloader:
