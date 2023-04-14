@@ -12,6 +12,11 @@ MC Version | Forge | Fabric
 1.19.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.19.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.19.2_develop)
 1.19.1 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.19.1_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.19.1_develop)
 1.19.0 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.19.0_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.19.0_develop)
+1.18.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.18.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.18.2_develop)
+1.18.1 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.18.1_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.18.1_develop)
+1.18.0 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.18.0_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.18.0_develop)
+1.17.1 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.17.1_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.17.1_develop)
+1.17.0 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.17.0_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.17.0_develop)
 
 **Legend**:
 - `✓`: Builds and runs successfully in a modded game
