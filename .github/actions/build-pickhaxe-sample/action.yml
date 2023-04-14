@@ -25,7 +25,7 @@ inputs:
     default: '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
 
 runs:
-  using: ${{inputs.os}}
+  using: "composite"
   env:
     pickhaxe: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}}
   steps:
