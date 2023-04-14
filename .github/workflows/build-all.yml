@@ -69,14 +69,23 @@ jobs:
       with:
         name: ${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
         path: ./${{matrix.sample}}/build/${{matrix.mcloader}}/${{matrix.mcversion}}/*.jar
-    - name: "Cleanup: Update Badge"
-      if: always()
+    - name: "Cleanup: Update Badge (Success)"
+      if: ${{ success() }}
       uses: RubbaBoy/BYOB@v1.3.0
       with:
         NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
         LABEL: ${{matrix.mcloader}} v${{matrix.mcversion}}
         ICON: 'github'
-        STATUS: ${{ success() && 'passing' || 'failing' }}
-        COLOR: ${{ success() && 'green' || 'red' }}
+        STATUS: 'passing'
+        COLOR: 'green'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+    - name: "Cleanup: Update Badge (Failure)"
+      if: ${{ failure() }}
+      uses: RubbaBoy/BYOB@v1.3.0
+      with:
+        NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
+        LABEL: ${{matrix.mcloader}} v${{matrix.mcversion}}
+        ICON: 'github'
+        STATUS: 'failing'
+        COLOR: 'red'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
