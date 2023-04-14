@@ -9,6 +9,13 @@ See each project's README for more detailed information, along with a compatibil
 - obsidianarmor
     - Includes a custom set of Armor and Tool items, in a custom Creative Mode tab.
 
+## Notes
+
+- To manually run a workflow:
+    - Navigate to Actions
+    - Select the workflow you want to run.
+    - Click "Run workflow" at the right side
+
 ## Licensing
 
 All projects in this repository are under the LGPLv3 license.
