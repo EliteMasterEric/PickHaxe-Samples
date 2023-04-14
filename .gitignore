@@ -1,0 +1,9 @@
+bin/
+build.hxml
+build/
+dev/
+dump/
+generated/
+gradle/
+log.txt
+temp/
