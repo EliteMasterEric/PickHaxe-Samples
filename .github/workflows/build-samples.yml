@@ -41,7 +41,7 @@ jobs:
         - ''
         - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
     env:
-      pickhaxe: ${{(pickhaxe == '') && 'Release' || 'Develop'}}
+      pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
     steps:
     - name: Git Checkout
       uses: actions/checkout@v3
