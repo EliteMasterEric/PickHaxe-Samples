@@ -39,14 +39,16 @@ jobs:
         - fabric
         - forge
         mcversion:
+        - latest-snapshot
+        - latest
         - 1.19.4
         - 1.19.3
         - 1.19.2
         - 1.19.1
-        - 1.19.0
+        - 1.19 # 1.19.0
         pickhaxe:
-        - ''
-        - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
+        # - '' # Current HaxeLib version (NOTE: pickhaxe doesn't work on haxelib right now)
+        - '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
     env:
       pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
     steps:
