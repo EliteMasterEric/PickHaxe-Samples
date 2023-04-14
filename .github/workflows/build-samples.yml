@@ -21,8 +21,10 @@ defaults:
 
 # The jobs to perform; these run in parallel.
 jobs:
+  # Perform a PickHaxe build and make.
+  # The task should fail if Gradle fails.
   build:
-    name: Build (${{matrix.sample}} ${{matrix.mcloader}} ${{matrix.mcversion}})
+    name: Build ${{env.pickhaxe}} (${{matrix.sample}} ${{matrix.mcloader}} ${{matrix.mcversion}})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -45,9 +47,13 @@ jobs:
     steps:
     - name: Git Checkout
       uses: actions/checkout@v3
-    - name: "Install: Haxe ${{ matrix.haxe }} and PickHaxe $${{env.pickhaxe}}"
+    - name: "Install: Haxe ${{ matrix.haxe }} and PickHaxe (${{env.pickhaxe}})"
       uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
       with:
         haxe-version: ${{ matrix.haxe }}
         haxe-libs: |
           PickHaxe${{ matrix.pickhaxe }}
+    - name: pickhaxe build && pickhaxe make
+      run: |
+        haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}}
+        haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}}
