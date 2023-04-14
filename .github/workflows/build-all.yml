@@ -64,6 +64,10 @@ jobs:
         exclude:
         - mcversion: latest-snapshot # Forge does not target snapshots, Fabric does.
           mcloader: forge
+        - mcversion: 1.17 # Forge 1.17.0 doesn't exist
+          mcloader: forge
+        - mcversion: 1.16 # Forge 1.16.0 doesn't exist
+          mcloader: forge
     env:
       pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
     steps:
