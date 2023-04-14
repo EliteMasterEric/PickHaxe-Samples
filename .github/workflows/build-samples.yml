@@ -58,6 +58,7 @@ jobs:
       with:
         haxe-version: ${{ matrix.haxe }}
         haxe-libs: |
+          hxjava
           pickhaxe${{ matrix.pickhaxe }}
     - name: "Build: pickhaxe build && pickhaxe make"
       run: |
