@@ -24,7 +24,7 @@ jobs:
   # Perform a PickHaxe build and make.
   # The task should fail if Gradle fails.
   build:
-    name: Build ${{env.pickhaxe}} (${{matrix.sample}} ${{matrix.mcloader}} ${{matrix.mcversion}})
+    name: Build ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}} (${{matrix.sample}} ${{matrix.mcloader}} ${{matrix.mcversion}})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
