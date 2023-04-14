@@ -31,22 +31,23 @@ jobs:
         - ubuntu-latest
         haxe:
         - 4.3.0
-        pickhaxe:
-        - ''
-        - '@git:https://github.com/EliteMasterEric/PickHaxe#master'
-        - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
         sample:
         - madeinhaxe
         mcloader:
         - fabric
         mcversion:
         - 1.19.3
+        pickhaxe:
+        - ''
+        - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
+    env:
+      pickhaxe: ${{(pickhaxe == '') && 'Release' || 'Develop'}}
     steps:
     - name: Git Checkout
       uses: actions/checkout@v3
-    - name: "Install: Haxe ${{ matrix.haxe }} and PickHaxe"
+    - name: "Install: Haxe ${{ matrix.haxe }} and PickHaxe $${{env.pickhaxe}}"
       uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
       with:
         haxe-version: ${{ matrix.haxe }}
         haxe-libs: |
-          pickhaxe${{ matrix.pickhaxe }}
+          PickHaxe${{ matrix.pickhaxe }}
