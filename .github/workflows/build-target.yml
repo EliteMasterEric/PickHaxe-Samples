@@ -63,12 +63,12 @@ jobs:
     - name: "Build: pickhaxe build && pickhaxe make"
       uses: ./.github/actions/build-pickhaxe-sample
       with:
-        os: ${{matrix.os}}
-        haxe: ${{matrix.haxe}}
-        sample: ${{matrix.sample}}
-        mcloader: ${{matrix.mcloader}}
-        mcversion: ${{matrix.mcversion}}
-        pickhaxe: ${{matrix.pickhaxe}}
+        os: ${{inputs.os}}
+        haxe: ${{inputs.haxe}}
+        sample: ${{inputs.sample}}
+        mcloader: ${{inputs.mcloader}}
+        mcversion: ${{inputs.mcversion}}
+        pickhaxe: ${{inputs.pickhaxe}}
     - name: "Cleanup: Upload Artifacts"
       if: env.ACT != 'true' # https://github.com/nektos/act#skipping-steps
       uses: actions/upload-artifact@v3

@@ -1,4 +1,4 @@
-name: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}} (${{inputs.sample}} ${{inputs.mcloader}} ${{inputs.mcversion}})
+name: PickHaxe - Build Project
 
 inputs:
   os:
