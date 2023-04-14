@@ -31,17 +31,17 @@ steps:
     with:
       distribution: 'oracle'
       java-version: '17'
-  - name: "Setup: Haxe ${{ matrix.haxe }} and PickHaxe (${{env.pickhaxe}})"
+  - name: "Setup: Haxe ${{ inputs.haxe }} and PickHaxe (${{env.pickhaxe}})"
     uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
     with:
-      haxe-version: ${{ matrix.haxe }}
+      haxe-version: ${{ inputs.haxe }}
       haxe-libs: |
         haxelib@git:https://github.com/HaxeFoundation/haxelib#development
         hxjava
-        pickhaxe${{ matrix.pickhaxe }}
+        pickhaxe${{ inputs.pickhaxe }}
   - name: "Build: pickhaxe build && pickhaxe make"
     # Using Mojang mappings because they're more up-to-date (they have fewer docs but we don't need them)
     run: |
-      cd ./${{matrix.sample}}
-      haxelib run pickhaxe build ${{matrix.mcloader}} ${{matrix.mcversion}} --mappings mojang
-      haxelib run pickhaxe make ${{matrix.mcloader}} ${{matrix.mcversion}} --mappings mojang
+      cd ./${{inputs.sample}}
+      haxelib run pickhaxe build ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang
+      haxelib run pickhaxe make ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang
