@@ -14,7 +14,7 @@ class ObsidianToolMaterial implements Tier
   private static final MINING_SPEED:Single = 9.0;
   private static final ATTACK_DAMAGE:Single = 1.0;
   private static final ENCHANTABILITY:Int = 20;
-  private static final REPAIR_INGREDIENT:Ingredient = Ingredient.ofItems([Items.OBSIDIAN]);
+  private static final REPAIR_INGREDIENT:Ingredient = Ingredient.of(Items.OBSIDIAN);
 
   public function new() {
     // Unlike Java, Haxe requires a constructor on constructable classes, even if it's empty.

@@ -18,7 +18,7 @@ class ObsidianArmorMaterial implements ArmorMaterial
   private static final ENCHANTABILITY:Int = 20;
   private static final EQUIP_SOUND:SoundEvent = SoundEvents.ARMOR_EQUIP_DIAMOND;
   // TODO: Fix rest/spread operator
-  private static final REPAIR_INGREDIENT:Ingredient = Ingredient.ofItems([Items.OBSIDIAN]);
+  private static final REPAIR_INGREDIENT:Ingredient = Ingredient.of(Items.OBSIDIAN);
   private static final KNOCKBACK_RESISTANCE:Single = 0.0;
 
   public function new() {
