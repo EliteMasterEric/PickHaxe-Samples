@@ -34,6 +34,7 @@ MC Version | Forge | Fabric
 - Tested using the `develop` version of PickHaxe
 - 1.19.4 Forge: Requires using `--mappings mojang` on build and make
 
+
 ## Building Locally
 
 - Make sure you have Haxe 4.3.0 installed.

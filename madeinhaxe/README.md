@@ -11,7 +11,7 @@ MC Version | Forge | Fabric
 1.19.3 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19.3_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19.3_develop)
 1.19.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19.2_develop)
 1.19.1 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19.1_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19.1_develop)
-1.19.0 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19_develop)
+1.19 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19_develop)
 1.18.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.18.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.18.2_develop)
 1.18.1 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.18.1_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.18.1_develop)
 1.18 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.18_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.18_develop)
@@ -31,6 +31,7 @@ MC Version | Forge | Fabric
 - `?`: Not tested
 
 **Issue List**:
+- Tested using the `develop` version of PickHaxe
 - 1.19.4 Forge: Requires using `--mappings mojang` on build and make
 
 
