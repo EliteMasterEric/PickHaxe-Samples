@@ -21,4 +21,4 @@ See each project's README for more detailed information, along with a compatibil
 
 ## Licensing
 
-All projects in this repository are under the LGPLv3 license.
+All projects in this repository are made available under an LGPLv3 license.

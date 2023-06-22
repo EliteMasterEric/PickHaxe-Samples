@@ -2,17 +2,17 @@
 <pickhaxe>
   <mod
     id="madeinhaxe"
-    version="0.2.1"
+    version="0.2.2"
     parentPackage="com.elitemastereric.madeinhaxe"
     classPath="./src/"
     resourcePath="./resources/"
   />
 
   <mod-contact
-    homepage="htts://github.com/elitemastereric/pickhaxe"
+    homepage="htts://github.com/elitemastereric/pickhaxe-samples"
     email="elitemastereric@gmail.com"
-    issues="htts://github.com/elitemastereric/pickhaxe/issues"
-    sources="htts://github.com/elitemastereric/pickhaxe"
+    issues="htts://github.com/elitemastereric/pickhaxe-samples/issues"
+    sources="htts://github.com/elitemastereric/pickhaxe-samples"
   />
 
   <mod-author name="EliteMasterEric">
