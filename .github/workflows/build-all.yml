@@ -32,7 +32,7 @@ jobs:
         os:
         - ubuntu-latest
         haxe:
-        - 4.3.0
+        - 4.3.1
         sample:
         - madeinhaxe
         - obsidianarmor
@@ -42,6 +42,8 @@ jobs:
         mcversion:
         - latest-snapshot
         - latest
+        - 1.20.1
+        - 1.20 # 1.20.0
         - 1.19.4
         - 1.19.3
         - 1.19.2
@@ -67,6 +69,28 @@ jobs:
         - mcversion: 1.17 # Forge 1.17.0 doesn't exist
           mcloader: forge
         - mcversion: 1.16 # Forge 1.16.0 doesn't exist
+          mcloader: forge
+                  - 1.18.2
+        # Disable Forge below 1.19.
+        - mcversion: 1.18.1
+          mcloader: forge
+        - mcversion: 1.18
+          mcloader: forge
+        - mcversion: 1.17.1
+          mcloader: forge
+        - mcversion: 1.17
+          mcloader: forge
+        - mcversion: 1.16.5
+          mcloader: forge
+        - mcversion: 1.16.4
+          mcloader: forge
+        - mcversion: 1.16.3
+          mcloader: forge
+        - mcversion: 1.16.2
+          mcloader: forge
+        - mcversion: 1.16.1
+          mcloader: forge
+        - mcversion: 1.16
           mcloader: forge
     env:
       pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
