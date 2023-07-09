@@ -7,6 +7,8 @@ Made in Haxe is a barebones sample mod, which adds a functionless new item and a
 
 MC Version | Forge | Fabric
 ---|---|---
+1.20.1 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.20.1_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.20.1_develop)
+1.20 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.20_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.20_develop)
 1.19.4 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19.4_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19.4_develop)
 1.19.3 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19.3_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19.3_develop)
 1.19.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.19.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.19.2_develop)
