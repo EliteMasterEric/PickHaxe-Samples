@@ -9,7 +9,7 @@ inputs:
   haxe:
     description: 'Haxe version used to run this build'
     required: true
-    default: 4.3.0
+    default: nightly 
   sample:
     description: 'The name of the sample to build'
     required: true
@@ -54,5 +54,5 @@ runs:
       shell: bash
       run: |
         cd ./${{inputs.sample}}
-        haxelib run pickhaxe build ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang
-        haxelib run pickhaxe make ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang
+        haxelib run pickhaxe build ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang --gen-sources
+        haxelib run pickhaxe make ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang --gen-sources

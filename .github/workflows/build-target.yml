@@ -10,7 +10,7 @@ on:
       haxe:
         description: 'Haxe version'
         required: true
-        default: 4.3.0
+        default: nightly 
         type: string
       sample:
         description: 'Sample to build'

@@ -2,7 +2,7 @@
 <pickhaxe>
   <mod
     id="obsidianarmor"
-    version="1.0.0-haxe"
+    version="0.4.0"
     parentPackage="com.elitemastereric.obsidianarmor"
     classPath="./src/"
     resourcePath="./resources/"
@@ -20,7 +20,6 @@
   <mod-contact
     homepage="htts://github.com/elitemastereric/pickhaxe"
     email="elitemastereric@gmail.com"
-    irc="irc://irc.esper.net:6667/charset"
     issues="htts://github.com/elitemastereric/pickhaxe/issues"
     sources="htts://github.com/elitemastereric/pickhaxe"
   />

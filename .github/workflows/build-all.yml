@@ -32,7 +32,7 @@ jobs:
         os:
         - ubuntu-latest
         haxe:
-        - 4.3.1
+        - nightly 
         sample:
         - madeinhaxe
         - obsidianarmor
