@@ -18,16 +18,14 @@
   />
 
   <mod-contact
-    homepage="htts://github.com/elitemastereric/pickhaxe"
+    homepage="https://github.com/elitemastereric/pickhaxe-samples"
     email="elitemastereric@gmail.com"
-    issues="htts://github.com/elitemastereric/pickhaxe/issues"
-    sources="htts://github.com/elitemastereric/pickhaxe"
+    issues="https://github.com/elitemastereric/pickhaxe-samples/issues"
+    sources="https://github.com/elitemastereric/pickhaxe-samples"
   />
 
-  <mod-author name="EliteMasterEric">
-    <mod-contact email="elitemastereric@gmail.com" />
-  </mod-author>
+  <mod-author name="EliteMasterEric" email="elitemastereric@gmail.com" />
 
   <!-- https://spdx.org/licenses/ -->
-  <mod-license value="MIT" />
+  <mod-license value="LGPLv3 License" />
 </pickhaxe>

@@ -9,15 +9,13 @@
   />
 
   <mod-contact
-    homepage="htts://github.com/elitemastereric/pickhaxe-samples"
+    homepage="https://github.com/elitemastereric/pickhaxe-samples"
     email="elitemastereric@gmail.com"
-    issues="htts://github.com/elitemastereric/pickhaxe-samples/issues"
-    sources="htts://github.com/elitemastereric/pickhaxe-samples"
+    issues="https://github.com/elitemastereric/pickhaxe-samples/issues"
+    sources="https://github.com/elitemastereric/pickhaxe-samples"
   />
 
-  <mod-author name="EliteMasterEric">
-    <mod-contact email="elitemastereric@gmail.com" />
-  </mod-author>
+  <mod-author name="EliteMasterEric" email="elitemastereric@gmail.com" />
 
   <mod-entry-point 
     environment="*"
