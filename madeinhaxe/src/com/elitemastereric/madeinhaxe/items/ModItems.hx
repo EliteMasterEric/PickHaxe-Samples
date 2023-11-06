@@ -1,8 +1,6 @@
 package com.elitemastereric.madeinhaxe.items;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStack;
 import net.pickhaxe.compat.core.Registries;
 import net.pickhaxe.compat.core.Registry;
