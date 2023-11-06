@@ -6,4 +6,5 @@ dump/
 generated/
 gradle/
 log.txt
+*.log
 temp/
