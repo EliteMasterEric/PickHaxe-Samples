@@ -13,14 +13,8 @@
     },
     {
         "id": "madeinhaxe-bare-fabric",
-        "name": "Made in Haxe (Bare: Fabric 1.19.4)",
-        "description": "A simple mod that adds a single item. Written directly with the Fabric API for Minecraft 1.19.4.",
-        "folder": "madeinhaxe-bare/fabric-1.19.4"
-    },
-    {
-        "id": "madeinhaxe-bare-forge",
-        "name": "Made in Haxe (Bare: Forge 1.19.4)",
-        "description": "A simple mod that adds a single item. Written directly with the Fabric API for Minecraft 1.19.4.",
-        "folder": "madeinhaxe-bare/forge-1.19.4"
+        "name": "Made in Haxe (Bare: Fabric 1.20.2)",
+        "description": "A simple mod that adds a single item. Written directly with the Fabric API for Minecraft 1.20.2.",
+        "folder": "madeinhaxe-bare/fabric-1.20.2"
     }
 ]
