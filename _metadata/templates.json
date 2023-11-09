@@ -3,24 +3,24 @@
         "id": "madeinhaxe",
         "name": "Made in Haxe",
         "description": "A simple mod that adds a single item. Uses PickHaxe to support both Fabric and Forge!",
-        "url": "https://github.com/EliteMasterEric/PickHaxe-Samples/tree/master/madeinhaxe"
+        "folder": "madeinhaxe"
     },
     {
         "id": "obsidianarmor",
         "name": "Obsidian Armor",
         "description": "A mod for Fabric and Forge that adds a full armor and tool set. Includes a Creative Tab and custom advancement!",
-        "url": "https://github.com/EliteMasterEric/PickHaxe-Samples/tree/master/obsidianarmor"
+        "folder": "obsidianarmor"
     },
     {
         "id": "madeinhaxe-bare-fabric",
         "name": "Made in Haxe (Bare: Fabric 1.19.4)",
         "description": "A simple mod that adds a single item. Written directly with the Fabric API for Minecraft 1.19.4.",
-        "url": "https://github.com/EliteMasterEric/PickHaxe-Samples/tree/master/madeinhaxe-bare/fabric-1.19.4"
+        "folder": "madeinhaxe-bare/fabric-1.19.4"
     },
     {
         "id": "madeinhaxe-bare-forge",
         "name": "Made in Haxe (Bare: Forge 1.19.4)",
         "description": "A simple mod that adds a single item. Written directly with the Fabric API for Minecraft 1.19.4.",
-        "url": "https://github.com/EliteMasterEric/PickHaxe-Samples/tree/master/madeinhaxe-bare/fabric-1.19.4"
+        "folder": "madeinhaxe-bare/forge-1.19.4"
     }
 ]
