@@ -4,6 +4,7 @@ build/
 dev/
 dump/
 generated/
+run/
 gradle/
 log.txt
 *.log
