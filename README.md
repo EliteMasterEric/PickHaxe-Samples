@@ -8,6 +8,8 @@ See each project's README for more detailed information, along with a compatibil
     - Includes a basic item in a Creative Mode tab.
 - obsidianarmor
     - Includes a custom set of Armor and Tool items, in a custom Creative Mode tab.
+- madeinhaxe-bare
+    - Provides a family of samples which reimplement the `madeinhaxe` sample without PickHaxe's compatibility classes.
 
 ## Notes
 
