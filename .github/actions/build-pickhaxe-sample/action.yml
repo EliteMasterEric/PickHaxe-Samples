@@ -45,8 +45,8 @@ runs:
       uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
       with:
         haxe-version: ${{ inputs.haxe }}
+        # haxelib@git:https://github.com/HaxeFoundation/haxelib#development
         haxe-libs: |
-          haxelib@git:https://github.com/HaxeFoundation/haxelib#development
           hxjava
           pickhaxe${{ inputs.pickhaxe }}
     - name: "Build: pickhaxe build && pickhaxe make"

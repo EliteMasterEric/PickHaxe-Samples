@@ -42,6 +42,7 @@ jobs:
         mcversion:
         - latest-snapshot
         - latest
+        - 1.20.2
         - 1.20.1
         - '1.20' # 1.20.0
         - 1.19.4
@@ -61,8 +62,8 @@ jobs:
         - 1.16.1
         - 1.16 # 1.16.0
         pickhaxe:
-        # - '' # Current HaxeLib version (NOTE: pickhaxe doesn't work on haxelib right now)
-        - '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
+        - '' # Current HaxeLib version
+        # - '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
         exclude:
         - mcversion: latest-snapshot # Forge does not target snapshots, Fabric does.
           mcloader: forge
@@ -70,12 +71,7 @@ jobs:
           mcloader: forge
         - mcversion: 1.16 # Forge 1.16.0 doesn't exist
           mcloader: forge
-                  - 1.18.2
-        # Disable Forge below 1.19.
-        - mcversion: 1.18.1
-          mcloader: forge
-        - mcversion: 1.18
-          mcloader: forge
+        # Disable Forge below 1.18
         - mcversion: 1.17.1
           mcloader: forge
         - mcversion: 1.17
