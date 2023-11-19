@@ -41,18 +41,33 @@ runs:
       with:
         distribution: 'oracle'
         java-version: '17'
-    - name: "Setup: Haxe ${{ inputs.haxe }} and PickHaxe (${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}})"
-      uses: vegardit/haxe-reusable-workflows/.github/actions/setup-haxe@v1
+    - name: "Setup: Haxe ${{ inputs.haxe }}"
+      uses: krdlab/setup-haxe@v1.5.1
       with:
-        haxe-version: ${{ inputs.haxe }}
-        # haxelib@git:https://github.com/HaxeFoundation/haxelib#development
-        haxe-libs: |
-          hxjava
-          pickhaxe${{ inputs.pickhaxe }}
-    - name: "Build: pickhaxe build && pickhaxe make"
+        haxe-version: latest # Development build
+    - name: Config haxelib
+      run: |
+        haxelib config
+      shell: bash
+    - name: "Setup: PickHaxe (Release)"
+      if: ${{ inputs.pickhaxe == 'haxelib' }}
+      run: |
+        haxe -version
+        haxelib git haxelib https://github.com/HaxeFoundation/haxelib.git master
+        haxelib version
+        haxelib install hxjava
+        haxelib install pickhaxe
+    - name: "Setup: PickHaxe (Development)"
+      if: ${{ inputs.pickhaxe == 'git' }}
+      run: |
+        haxe -version
+        haxelib git haxelib https://github.com/HaxeFoundation/haxelib.git master
+        haxelib version
+        haxelib install hxjava
+        haxelib git pickhaxe https://github.com/EliteMasterEric/PickHaxe develop
+    - name: "Build: pickhaxe build"
       # Using Mojang mappings because they're more up-to-date (they have fewer docs but we don't need them)
       shell: bash
       run: |
         cd ./${{inputs.sample}}
-        haxelib run pickhaxe build ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang --gen-sources
-        haxelib run pickhaxe make ${{inputs.mcloader}} ${{inputs.mcversion}} --mappings mojang --gen-sources
+        haxelib run pickhaxe build ${{inputs.mcloader}} ${{inputs.mcversion}} --make --mappings mojang

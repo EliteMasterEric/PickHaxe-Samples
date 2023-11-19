@@ -7,11 +7,6 @@ on:
         required: true
         default: ubuntu-latest
         type: string
-      haxe:
-        description: 'Haxe version'
-        required: true
-        default: nightly 
-        type: string
       sample:
         description: 'Sample to build'
         required: true
@@ -36,11 +31,11 @@ on:
       pickhaxe:
         description: 'PickHaxe version'
         required: true
-        default: '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
+        default: 'git'
         type: choice
         options:
-          - ''
-          - '@git:https://github.com/EliteMasterEric/PickHaxe#develop'
+          - 'haxelib'
+          - 'git'
 
 defaults:
   run:
@@ -51,12 +46,12 @@ jobs:
   # Perform a PickHaxe build and make.
   # The task should fail if Gradle fails.
   build:
-    name: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}} (${{inputs.sample}} ${{inputs.mcloader}} ${{inputs.mcversion}})
+    name: ${{(inputs.pickhaxe == 'haxelib') && 'Release' || 'Develop'}} (${{inputs.sample}} ${{inputs.mcloader}} ${{inputs.mcversion}})
     runs-on: ${{ inputs.os }}
     strategy:
       fail-fast: false
     env:
-      pickhaxe: ${{(inputs.pickhaxe == '') && 'Release' || 'Develop'}}
+      pickhaxe: ${{(inputs.pickhaxe == 'haxelib') && 'Release' || 'Develop'}}
     steps:
     - name: "Setup: Git Checkout"
       uses: actions/checkout@v3
@@ -64,7 +59,6 @@ jobs:
       uses: ./.github/actions/build-pickhaxe-sample
       with:
         os: ${{inputs.os}}
-        haxe: ${{inputs.haxe}}
         sample: ${{inputs.sample}}
         mcloader: ${{inputs.mcloader}}
         mcversion: ${{inputs.mcversion}}
@@ -73,5 +67,25 @@ jobs:
       if: env.ACT != 'true' # https://github.com/nektos/act#skipping-steps
       uses: actions/upload-artifact@v3
       with:
-        name: ${{inputs.sample}}-${{inputs.mcloader}}-${{inputs.mcversion}}_${{(inputs.pickhaxe == '') && 'release' || 'develop'}}
+        name: ${{inputs.sample}}-${{inputs.mcloader}}-${{inputs.mcversion}}_${{(inputs.pickhaxe == 'haxelib') && 'release' || 'develop'}}
         path: ./${{inputs.sample}}/build/${{inputs.mcloader}}/${{inputs.mcversion}}/*.jar
+    - name: "Cleanup: Update Badge (Success)"
+      if: ${{ success() }}
+      uses: RubbaBoy/BYOB@v1.3.0
+      with:
+        NAME: build-${{inputs.sample}}-${{inputs.mcloader}}-${{inputs.mcversion}}_${{(inputs.pickhaxe == 'haxelib') && 'release' || 'develop'}}
+        LABEL: ${{inputs.mcloader}} v${{inputs.mcversion}}
+        ICON: 'github'
+        STATUS: 'passing'
+        COLOR: 'green'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: "Cleanup: Update Badge (Failure)"
+      if: ${{ failure() }}
+      uses: RubbaBoy/BYOB@v1.3.0
+      with:
+        NAME: build-${{inputs.sample}}-${{inputs.mcloader}}-${{inputs.mcversion}}_${{(inputs.pickhaxe == 'haxelib') && 'release' || 'develop'}}
+        LABEL: ${{inputs.mcloader}} v${{inputs.mcversion}}
+        ICON: 'github'
+        STATUS: 'failing'
+        COLOR: 'red'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

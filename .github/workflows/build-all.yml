@@ -24,15 +24,13 @@ jobs:
   # Perform a PickHaxe build and make.
   # The task should fail if Gradle fails.
   build:
-    name: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}} (${{matrix.sample}} ${{matrix.mcloader}} ${{matrix.mcversion}})
+    name: ${{(matrix.pickhaxe == 'haxelib') && 'Release' || 'Develop'}} (${{matrix.sample}} ${{matrix.mcloader}} ${{matrix.mcversion}})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os:
         - ubuntu-latest
-        haxe:
-        - nightly 
         sample:
         - madeinhaxe
         - obsidianarmor
@@ -62,8 +60,8 @@ jobs:
         - 1.16.1
         - 1.16 # 1.16.0
         pickhaxe:
-        - '' # Current HaxeLib version
-        # - '@git:https://github.com/EliteMasterEric/PickHaxe#develop' # Latest development version
+        - 'haxelib' # Current HaxeLib version
+        - 'git' # Latest development version
         exclude:
         - mcversion: latest-snapshot # Forge does not target snapshots, Fabric does.
           mcloader: forge
@@ -89,7 +87,7 @@ jobs:
         - mcversion: 1.16
           mcloader: forge
     env:
-      pickhaxe: ${{(matrix.pickhaxe == '') && 'Release' || 'Develop'}}
+      pickhaxe: ${{(matrix.pickhaxe == 'haxelib') && 'Release' || 'Develop'}}
     steps:
     - name: "Setup: Git Checkout"
       uses: actions/checkout@v3
@@ -97,7 +95,6 @@ jobs:
       uses: ./.github/actions/build-pickhaxe-sample
       with:
         os: ${{matrix.os}}
-        haxe: ${{matrix.haxe}}
         sample: ${{matrix.sample}}
         mcloader: ${{matrix.mcloader}}
         mcversion: ${{matrix.mcversion}}
@@ -106,13 +103,13 @@ jobs:
       if: env.ACT != 'true' # https://github.com/nektos/act#skipping-steps
       uses: actions/upload-artifact@v3
       with:
-        name: ${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
+        name: ${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == 'haxelib') && 'release' || 'develop'}}
         path: ./${{matrix.sample}}/build/${{matrix.mcloader}}/${{matrix.mcversion}}/*.jar
     - name: "Cleanup: Update Badge (Success)"
       if: ${{ success() }}
       uses: RubbaBoy/BYOB@v1.3.0
       with:
-        NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
+        NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == 'haxelib') && 'release' || 'develop'}}
         LABEL: ${{matrix.mcloader}} v${{matrix.mcversion}}
         ICON: 'github'
         STATUS: 'passing'
@@ -122,7 +119,7 @@ jobs:
       if: ${{ failure() }}
       uses: RubbaBoy/BYOB@v1.3.0
       with:
-        NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == '') && 'release' || 'develop'}}
+        NAME: build-${{matrix.sample}}-${{matrix.mcloader}}-${{matrix.mcversion}}_${{(matrix.pickhaxe == 'haxelib') && 'release' || 'develop'}}
         LABEL: ${{matrix.mcloader}} v${{matrix.mcversion}}
         ICON: 'github'
         STATUS: 'failing'
