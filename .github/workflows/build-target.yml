@@ -55,7 +55,7 @@ jobs:
     steps:
     - name: "Setup: Git Checkout"
       uses: actions/checkout@v3
-    - name: "Build: pickhaxe build && pickhaxe make"
+    - name: "Build: pickhaxe build"
       uses: ./.github/actions/build-pickhaxe-sample
       with:
         os: ${{inputs.os}}

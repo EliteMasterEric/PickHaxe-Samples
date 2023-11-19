@@ -46,10 +46,11 @@ runs:
       with:
         haxe-version: latest # Development build
     - name: Config haxelib
+      shell: bash
       run: |
         haxelib config
-      shell: bash
     - name: "Setup: PickHaxe (Release)"
+      shell: bash
       if: ${{ inputs.pickhaxe == 'haxelib' }}
       run: |
         haxe -version
@@ -58,6 +59,7 @@ runs:
         haxelib install hxjava
         haxelib install pickhaxe
     - name: "Setup: PickHaxe (Development)"
+      shell: bash
       if: ${{ inputs.pickhaxe == 'git' }}
       run: |
         haxe -version
