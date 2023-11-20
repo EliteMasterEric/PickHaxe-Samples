@@ -8,6 +8,7 @@ It does this WITHOUT using PickHaxe's compatibility APIs. The code in these repo
 
 MC Version | Forge | Fabric
 ---|---|---
+1.20.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-forge-1.20.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-fabric-1.20.2_develop)
 1.19.4 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-forge-1.19.4_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-fabric-1.19.4_develop)
 
 ## Building
