@@ -1,7 +1,9 @@
 {
-    "terminal.integrated.env.windows": {
-      "PATH": "C:\\Haxe\\Haxe500-bdd7bf4\\haxe;${env:PATH}"
-    },
-    "haxe.configurations": [["generated/build.hxml"]]
-  }
-  
+  "terminal.integrated.env.windows": {
+    "PATH": "C:\\Haxe\\Haxe500-bdd7bf4\\haxe;${env:PATH}"
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "/home/eric/Documents/Programming/Haxe/_Install/haxe_20240107093041_29085f8/:${env:PATH}"
+  },
+  "haxe.configurations": [["generated/build.hxml"]]
+}
