@@ -2,11 +2,13 @@
 <pickhaxe>
   <mod
     id="obsidianarmor"
-    version="0.4.0"
+    version="0.5.0"
     parentPackage="com.elitemastereric.obsidianarmor"
     classPath="./src/"
     resourcePath="./resources/"
   />
+
+  <haxelib name="pickhaxe-compat" />
 
   <mod-entry-point
     environment="*"
@@ -16,6 +18,12 @@
     name="Obsidian Armor"
     description="A mod written in Haxe!"
   />
+
+  <mod-data-generator
+    value="ObsidianArmorDataGenerator">
+    <loader value="fabric" />
+    <minecraft op="gteq" value="1.21.1" />
+  </mod-data-generator>
 
   <mod-contact
     homepage="https://github.com/elitemastereric/pickhaxe-samples"

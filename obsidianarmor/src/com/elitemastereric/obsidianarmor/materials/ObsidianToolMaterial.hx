@@ -7,8 +7,14 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 class ObsidianToolMaterial implements Tier
 {
-  // TODO: How to get `Tiers.STONE` to work?
+  #if minecraft_gteq_1_20_5
+  private static final INCORRECT_BLOCKS_FOR_DROPS:net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block> = 
+    net.minecraft.tags.BlockTags.INCORRECT_FOR_STONE_TOOL;
+  #end
+
+  #if minecraft_lteq_1_20_4
   private static final MINING_LEVEL:Int = Tiers.STONE.getLevel();
+  #end
   // private static final MINING_LEVEL:Int = 1;
   private static final DURABILITY:Int = 64;
   private static final MINING_SPEED:Single = 9.0;
@@ -35,11 +41,6 @@ class ObsidianToolMaterial implements Tier
     return ATTACK_DAMAGE;
   }
 
-  public function getLevel():Int
-  {
-    return MINING_LEVEL;
-  }
-
   public function getEnchantmentValue():Int
   {
     return ENCHANTABILITY;
@@ -49,4 +50,18 @@ class ObsidianToolMaterial implements Tier
   {
     return REPAIR_INGREDIENT;
   }
+
+  #if minecraft_gteq_1_20_5
+  public function getIncorrectBlocksForDrops():net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block>
+  {
+    return INCORRECT_BLOCKS_FOR_DROPS;
+  }
+  #end
+
+  #if minecraft_lteq_1_20_4
+  public function getLevel():Int
+  {
+    return MINING_LEVEL;
+  }
+  #end
 }
