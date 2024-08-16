@@ -1,39 +1,40 @@
-# PickHaxe Sample Projects
+# PickHaxe Compat
 
-## Sample Projects
+PickHaxe Compat is a library for PickHaxe projects designed to assist in the creation of Minecraft mod projects which compile to Minecraft mods for multiple game versions and mod loaders, without splitting code into additional paths or branches.
 
-See each project's README for more detailed information, along with a compatibility table.
+# Usage
 
-- madeinhaxe
-    - Includes a basic item in a Creative Mode tab.
-- obsidianarmor
-    - Includes a custom set of Armor and Tool items, in a custom Creative Mode tab.
-- madeinhaxe-bare
-    - Provides a family of samples which reimplement the `madeinhaxe` sample without PickHaxe's compatibility classes.
+Download `pickhaxe-compat` via [haxelib](https://lib.haxe.org/p/PickHaxe/):
 
+```
+haxelib git pickhaxe-compat https://github.com/EliteMasterEric/pickhaxe-compat
+```
 
-## Compatibility
+Then add an entry to your PickHaxe project's `project.xml`:
 
-Sample | MC Version | Forge | Fabric
----|---|---|---
-madeinhaxe | 1.20.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-forge-1.20.2_release) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-fabric-1.20.2_release)
-obsidianarmor | 1.20.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-forge-1.20.2_release) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-obsidianarmor-fabric-1.20.2_release)
-madeinhaxe-bare | 1.20.2 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-forge-1.20.2_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-fabric-1.20.2_develop)
-madeinhaxe-bare | 1.19.4 | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-forge-1.19.4_develop) | ![](https://byob.yarr.is/EliteMasterEric/Pickhaxe-Samples/build-madeinhaxe-bare-fabric-1.19.4_develop)
+```xml
+<haxelib name="pickhaxe-compat" />
+```
 
+# Support
 
+If you have a question, please head to one of the official discussion areas:
+- The [PickHaxe Discussions](https://github.com/EliteMasterEric/PickHaxe/discussions) page.
+- The [forum thread](https://discord.com/channels/162395145352904705/1085695464466296932) on the official Haxe Discord.
+- The [Issues tab](https://github.com/EliteMasterEric/PickHaxe/issues).
 
-## Notes
+# Contributing
 
-- To manually run a workflow:
-    - Navigate to Actions
-    - Select the workflow you want to run.
-    - Click "Run workflow" at the right side
-- `git add .; git commit -m "Workflow"; git push`
-- https://github.com/nektos/act#manual-download
-    - `./bin/act -j build`
+Contributions are highly welcome and greatly appreciated. See [CONTRIBUTING.md](/CONTRIBUTING.md) for more information.
 
+# License
 
-## Licensing
+PickHaxe's tools and APIs are made available under the MIT License. See [LICENSE.md](/LICENSE.md) for more details.
 
-All projects in this repository are made available under an LGPLv3 license.
+PickHaxe's sample projects are made available under the LGPLv3 License. See [LICENSE.md](https://github.com/EliteMasterEric/PickHaxe-Samples/blob/master/LICENSE.md) for more details.
+
+PickHaxe's Minecraft API is generated from official mapping names from Mojang for fields and methods in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this license. For the latest license text, refer to the mapping file itself, or the reference copy here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+
+PickHaxe's Minecraft API includes documentation generated from the [Parchment mappings](https://parchmentmc.org/), which are made available under a CC0 1.0 Universal license. See [LICENSE.txt](https://github.com/ParchmentMC/Parchment/blob/versions/1.20.x/LICENSE.txt) for more details.
+
+PickHaxe interoperates with the [Fabric](https://fabricmc.net/) mod loader and the [Forge](https://github.com/MinecraftForge/MinecraftForge) mod loader respectively; these are licensed under the Apache v2 and LGPL licenses, respectively.

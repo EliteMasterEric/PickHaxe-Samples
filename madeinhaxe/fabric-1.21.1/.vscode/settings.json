@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "C:\\Haxe\\Haxe500-5c05e6d\\haxe;${env:PATH}"
+  },
+  "haxe.configurations": [["generated/build.hxml"]]
+}

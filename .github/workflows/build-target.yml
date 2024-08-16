@@ -10,11 +10,12 @@ on:
       sample:
         description: 'Sample to build'
         required: true
-        default: 'madeinhaxe'
+        default: 'madeinhaxe/fabric-1.20.6'
         type: choice
         options:
-          - madeinhaxe
-          - obsidianarmor
+          - madeinhaxe/fabric-1.19.4
+          - madeinhaxe/fabric-1.20.6
+          - madeinhaxe/forge-1.19.4
       mcloader:
         description: 'Minecraft modloader'
         required: true
