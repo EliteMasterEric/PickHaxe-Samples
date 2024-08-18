@@ -1,20 +1,50 @@
 [
     {
-        "id": "madeinhaxe",
-        "name": "Made in Haxe",
-        "description": "A simple mod that adds a single item. Uses PickHaxe to support both Fabric and Forge!",
-        "folder": "madeinhaxe"
+        "id": "madeinhaxe-fabric-1.16.5",
+        "name": "Made in Haxe (Fabric 1.16.5)",
+        "description": "A simple mod for Fabric 1.16.5 that adds a single item.",
+        "folder": "madeinhaxe/fabric-1.16.5"
+    },
+    {
+        "id": "madeinhaxe-fabric-1.17.1",
+        "name": "Made in Haxe (Fabric 1.17.1)",
+        "description": "A simple mod for Fabric 1.17.1 that adds a single item.",
+        "folder": "madeinhaxe/fabric-1.17.1"
+    },
+    {
+        "id": "madeinhaxe-fabric-1.18.2",
+        "name": "Made in Haxe (Fabric 1.18.2)",
+        "description": "A simple mod for Fabric 1.18.2 that adds a single item.",
+        "folder": "madeinhaxe/fabric-1.18.2"
+    },
+    {
+        "id": "madeinhaxe-fabric-1.19.4",
+        "name": "Made in Haxe (Fabric 1.19.4)",
+        "description": "A simple mod for Fabric 1.19.4 that adds a single item.",
+        "folder": "madeinhaxe/fabric-1.19.4"
+    },
+    {
+        "id": "madeinhaxe-fabric-1.20.6",
+        "name": "Made in Haxe (Fabric 1.20.6)",
+        "description": "A simple mod for Fabric 1.20.6 that adds a single item.",
+        "folder": "madeinhaxe/fabric-1.20.6"
+    },
+    {
+        "id": "madeinhaxe-fabric-1.21.1",
+        "name": "Made in Haxe (Fabric 1.21.1)",
+        "description": "A simple mod for Fabric 1.21.1 that adds a single item.",
+        "folder": "madeinhaxe/fabric-1.21.1"
+    },
+    {
+        "id": "madeinhaxe-forge-1.21.1",
+        "name": "Made in Haxe (Forge 1.21.1)",
+        "description": "A simple mod for Forge 1.21.1 that adds a single item.",
+        "folder": "madeinhaxe/forge-1.21.1"
     },
     {
         "id": "obsidianarmor",
         "name": "Obsidian Armor",
-        "description": "A mod for Fabric and Forge that adds a full armor and tool set. Includes a Creative Tab and custom advancement!",
+        "description": "A cross-version mod for Fabric and Forge that adds a full armor and tool set. Includes a Creative Tab, armor trim support, and a custom advancement!",
         "folder": "obsidianarmor"
-    },
-    {
-        "id": "madeinhaxe-bare-fabric",
-        "name": "Made in Haxe (Bare: Fabric 1.20.2)",
-        "description": "A simple mod that adds a single item. Written directly with the Fabric API for Minecraft 1.20.2.",
-        "folder": "madeinhaxe-bare/fabric-1.20.2"
     }
 ]
